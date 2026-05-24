@@ -8,6 +8,8 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
+
+
 #[Signature('tenants:create')]
 #[Description('Create a new tenant')]
 class CreateTenant extends Command {
