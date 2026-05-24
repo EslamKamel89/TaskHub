@@ -33,6 +33,7 @@ class CreateTenant extends Command {
             'database' => $database,
             'public_id' => $publicId,
             'name'  => $name,
+            'tenancy_db_name' => $database
         ]);
         $this->info("Tenant Created: {$tenant->public_id}");
         return self::SUCCESS;
