@@ -18,4 +18,10 @@ class TenantDebugController extends Controller {
         dump($tenant);
         return 'done';
     }
+    public function checkTenant(Request $request) {
+        return response()->json([
+            'tenant' => tenant()?->public_id,
+            'database' => DB::connection()->getDatabaseName(),
+        ]);
+    }
 }

@@ -9,6 +9,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
 
-Route::get('/debug-tenant/{publicId}', [TenantDebugController::class, 'debugTenant']);
+Route::prefix('/debug-tenant')->group(function () {
+    Route::get('/check', [TenantDebugController::class, 'checkTenant']);
+    Route::get('/{publicId}', [TenantDebugController::class, 'debugTenant']);
+});
 
 require __DIR__ . '/settings.php';
